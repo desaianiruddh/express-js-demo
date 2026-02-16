@@ -1,9 +1,7 @@
-export const getUsernameController = (req, res) => {
-  const username = req.params.username;
-  res.send(`This is about ${username}`);
+export const userLogin = (req, res) => {
+  res.send(`This is Login Route`);
 };
 
-export const searchUsernameController = (req, res) => {
-  const query = req.query.username;
-  res.send(`You searched for ${query}`);
+export const userSignup = (req, res) => {
+  res.send(`This is Signup Route`);
 };
