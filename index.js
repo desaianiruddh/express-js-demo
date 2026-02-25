@@ -4,6 +4,10 @@ import router from './route.js';
 const app = express();
 const port = 3000;
 
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+app.use('/public', express.static('public')); // for virtual path
+
 // logger middleware
 app.use((req, res, next) => {
   console.log('New request received at', new Date().toISOString());
@@ -55,7 +59,7 @@ app.use('/welcome', (req, res, next) => {
   res.on('finish', () => {
     // This will run after the response is sent
     console.log('End');
-  })
+  });
   next();
 });
 
