@@ -12,8 +12,9 @@ app.use((req, res, next) => {
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
+app.set('view engine', 'ejs'); // Set EJS as the view engine
 app.get('/', (req, res) => {
-  res.send('Hello There!');
+  res.render('index', { userName: 'John Doe' });
 });
 app.use('/user', router);
 
